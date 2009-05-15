@@ -8,7 +8,7 @@ module Bob
         @pool = ThreadPool.new(pool_size)
       end
 
-      def call(job)
+      def call(buildable, commit_id, job)
         @pool << job
       end
 

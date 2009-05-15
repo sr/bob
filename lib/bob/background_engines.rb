@@ -5,5 +5,6 @@ module Bob
   module BackgroundEngines
     autoload :Foreground, "bob/background_engines/foreground"
     autoload :Threaded, "bob/background_engines/threaded"
+    autoload :Queued, "bob/background_engines/queued"
   end
 end

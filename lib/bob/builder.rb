@@ -57,7 +57,7 @@ module Bob
     end
 
     def in_background(&block)
-      Bob.engine.call(block)
+      Bob.engine.call(buildable, commit_id, block)
     end
   end
 end

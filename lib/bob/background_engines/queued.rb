@@ -1,5 +1,5 @@
 module Bob
-  module BackgroundEngines
+  module Engines
     class Queued
       def initialize(push)
         @push = push

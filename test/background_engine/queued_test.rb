@@ -36,7 +36,7 @@ class QueuedBobTest < Test::Unit::TestCase
       )
     end
 
-    Bob.engine = Bob::BackgroundEngines::Queued.new(push)
+    Bob.engine = Bob::Engines::Queued.new(push)
   end
 
   test "with a successful threaded build" do

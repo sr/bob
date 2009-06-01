@@ -7,13 +7,13 @@ class BobGitTest < Test::Unit::TestCase
     @repo = GitRepo.new(:test_repo)
     @repo.create
 
-    @buildable = GitBuildableStub.new(@repo)
+    @buildable = BuildableStub.from(@repo)
   end
 
   test "with a successful build" do
     repo.add_successful_commit
 
-    commit_id = repo.commits.first[:identifier]
+    commit_id = repo.commits.last[:identifier]
 
     buildable.build(commit_id)
 
@@ -31,7 +31,7 @@ class BobGitTest < Test::Unit::TestCase
   test "with a failed build" do
     repo.add_failing_commit
 
-    commit_id = repo.commits.first[:identifier]
+    commit_id = repo.commits.last[:identifier]
 
     buildable.build(commit_id)
 

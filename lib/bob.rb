@@ -26,10 +26,8 @@ module Bob
   #                                           # (in that order)
   #     Bob.build(buildable, [:head, "a30fb12"]) # build the HEAD and a30fb12
   #                                              # commits in this repo.
-  def self.build(buildable, commit_ids)
-    Array(commit_ids).each do |commit_id|
-      Builder.new(buildable, commit_id).build
-    end
+  def self.build(buildable, commit_id)
+    Builder.new(buildable, commit_id).build
   end
 
   # Directory where the code for the different buildables will be checked out.
